@@ -6,12 +6,31 @@ import { test, expect } from '@playwright/test';
 
 // onderstaand de aanroep voor je eerste test. Tussen de quotes achter test kan je het een naam geven
 // in dit geval 'Naamgeving'. Bij de page.goto vul je tussen de '' in welke url je wilt openen
-test('Naamgeving', async ({ page }) => { //<-- { hiermee open je de functie test welke je later afsluit
+test('Open - Homepage', async ({ page }) => { //<-- { hiermee open je de functie test welke je later afsluit
     await page.goto('https://www.pancompany.com/');
 
+// We klikken ook de cookie banner weg
+await page.getByRole('button', { name: 'Deny' }).click();
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Kandidaten - Pancompany/);
 }); //<-- })hiermee sluit je de functie test af. 
 
 
+//Voor de volgende test roepen we weer de homepage aan, klikken we de banner weg maar willen we
+//op de knop, Over Pancompany, klikken en valideren op 2 manieren dat de pagina is geopen 
+test('Open - Over Pancompany', async ({ page }) => {
+  await page.goto('https://www.pancompany.com/');
+
+// We klikken ook de cookie banner weg
+await page.getByRole('button', { name: 'Deny' }).click();
+
+  // Klik op de , Over PanCompany, knop.
+  //await page.getByRole('link', { name: 'Over PanCompany' }).click();
+  await page.getByTitle('Over PanCompany').click();
+
+    // Verwacht dat er in de URL nu, over-pancompany, staat.
+    await expect(page).toHaveURL(/.*over-pancompany/);
+
+    await page.locator('section').filter({ hasText: 'Wij zijn Pancompany Pancompany is een community van Proven IT Experts. Wij houde' }).getByRole('link', { name: 'Neem contact op' }).click();
+  });
