@@ -50,7 +50,7 @@ await page.getByRole('button', { name: 'Deny' }).click();
   // Verwacht dat er in de URL nu, over-pancompany, staat.
   await expect(page).toHaveURL(/.*opdrachtgevers/);
 
-  // Verwacht dat het plaatje van de AH er staat.
+  // Verwacht dat het plaatje van de Albert Heijn er staat.
   await page.locator('div:nth-child(2) > .w-grid-item > .w-grid-item-h > .w-post-elm > .attachment-large').click();
   
   });
