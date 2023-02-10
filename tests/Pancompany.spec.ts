@@ -44,9 +44,7 @@ test('Open - Pancompany', async ({ page }) => {
 // We klikken ook de cookie banner weg
 await page.getByRole('button', { name: 'Deny' }).click();
 
-  // Klik op de , Over PanCompany, knop.
-  //await page.getByRole('link', { name: 'Over PanCompany' }).click();
-  //await page.getByTitle('Over PanCompany').click();
+  //await page.getByRole('link', { name: 'This is who we are.' }).click();
   await page.getByRole('heading', { name: 'This is who we are.' })
 
   // Verwacht dat er in de URL nu, over-pancompany, staat.
