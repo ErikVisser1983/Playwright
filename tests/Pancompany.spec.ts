@@ -1,6 +1,6 @@
 //stap1 Crieer een nieuwe file onder PLAYWRIGHT\tests (zelfde folder waar example.spec.ts in zit)
 //stap2 Die nieuwe file geef je een naam met aangevuld .spec.ts
-//stap3 in die nieuwe file schrijf je de onderstaande import. Deze roept de modules test en expect aan
+//stap3 in die nieuwe file schrijf je de onderstaande import. Deze roept de modules test en expect aan.
 import { test, expect } from '@playwright/test';
 // de modules test en expect worden opgehaald uit PLAYWRIGHT\node_modules\@playwright\test\lib
 
