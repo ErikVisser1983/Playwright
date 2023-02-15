@@ -36,9 +36,9 @@ await page.getByRole('button', { name: 'Deny' }).click();
   });
 
 
-//Voor de volgende test roepen we weer de Pancompany homepage weer aan maar dan voor de opdrachtgevers, klikken we de banner weg maar willen we
-//op de knop, Over Pancompany, klikken en valideren op 2 manieren dat de pagina is geopen 
-test('Open - Pancompany', async ({ page }) => {
+//Voor de volgende test roepen we weer de Pancompany homepage weer aan maar dan voor de opdrachtgevers
+//We klikken tevens de banner weer weg en valideren op 2 manieren dat de pagina is geopen 
+test('Open - Opdrachtgevers', async ({ page }) => {
   await page.goto('https://www.pancompany.com/opdrachtgevers/');
 
 // We klikken ook de cookie banner weg
